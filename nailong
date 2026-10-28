@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>加载中...</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a2e;
+      overflow: hidden;
+    }
+
+    /* 动画容器：整体淡入 + 缩放 */
+    .intro {
+      text-align: center;
+      color: #fff;
+      animation: zoomIn 2.5s ease forwards;
+    }
+
+    .intro h1 {
+      font-size: 42px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #aaa;
+      letter-spacing: 2px;
+    }
+
+    /* 一个小圆点加载动画 */
+    .dots {
+      margin-top: 30px;
+    }
+    .dots span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #4e9eff;
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+    .dots span:nth-child(2) { animation-delay: 0.2s; }
+    .dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes zoomIn {
+      0%   { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); opacity: 0.5; }
+      to   { transform: translateY(-12px); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="intro">
+    <h1>欢迎来到中国串没大学</h1>
+    <p>正在进入...</p >
+    <div class="dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <script>
+    // 2.5 秒后跳转到 main.html
+    setTimeout(function () {
+      window.location.href = "https://www.cuc.edu.cn";
+    }, 2500);
+  </script>
+
+</body>
+</html>
